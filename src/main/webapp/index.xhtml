@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
+
+    <head>
+        <link rel="stylesheet" href="style.css" type="text/css"/>
+
+        <title>Start Page</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+    </head>
+    <h:body>
+        <h1>Welcome to Touristiko sugkrotima</h1>
+        <div></div>        
+        <h:form>
+
+            <h2>Where would you like to stay?</h2>
+            <h:inputText id="username"
+                         title="My name is: "
+                         value="#{choise.name}"
+                         required="true"
+                         requiredMessage="Error: A name is required."
+                         maxlength="25" />
+
+        </h:form>
+
+        <p></p>
+        <label for="Rooms">Choose a room:</label>
+        <h:form>
+            <h:selectOneMenu  id="room-type" required="true" value="#{choise.roomType}">
+                <f:selectItem itemValue="Room" />
+                <f:selectItem itemValue="Double-Room"/>
+                <f:selectItem itemValue="Bangalow"/>
+            </h:selectOneMenu>
+            <p></p>
+            <h:selectOneMenu id="category" required="true" value="#{choise.category}">
+                <f:selectItem itemValue="Simple"/>
+                <f:selectItem itemValue="Lux"/>
+            </h:selectOneMenu>
+            <p></p>
+            <h:inputText id="number"
+                         title="How many rooms? "
+                         value="#{choise.number}"
+                         required="true"
+                         requiredMessage="Error: A positive number is required."
+                         maxlength="25" />
+            <p></p>
+            <label>Check in date:</label>
+            <br/>
+            <input type="date" jsf:id="date" name="checkInDate" 
+                   value="#{choise.checkInDate}" required="required"
+                   title="Enter or choose a date."/>
+            <p></p>
+            <label>Check out date:</label>
+            <br/>
+            <input type="date" jsf:id="date" name="checkOutDate" 
+                   value="#{choise.checkOutDate}" required="required"
+                   title="Enter or choose a date."/>
+            <p></p>
+            <h:commandButton id="submit" value="Submit" 
+                             action="#{choise.submitOrder()}"  />
+            <h:commandButton id="reset" value="Reset" type="reset" />
+        </h:form>
+
+
+    </h:body>
+
+</html>
+

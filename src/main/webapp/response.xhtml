@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Response</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h2>Hello, #{choise.name}!</h2>
+            <h2>Room chosen: #{choise.roomType},#{choise.category}!</h2>
+            <h2>Number of rooms: #{choise.number}!</h2>
+            <h2>Date: #{choise.checkInDate} until #{choise.checkOutDate}!</h2>
+            </h:form>
+            <h:form>
+                <h2>LIST OF ALL ROOMS</h2>
+                <h:dataTable value="#{choise.rooms}" var="room">
+                    <h:column>
+                        <f:facet name="header">ID</f:facet>
+                            #{room.id}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Type</f:facet>
+                            #{room.roomType}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Category</f:facet>
+                            #{room.category}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Availability</f:facet>
+                            #{room.availability}
+                    </h:column>
+
+                </h:dataTable>
+            </h:form>
+            <h:form>
+                <h2>LIST OF ALL BOOKS</h2>
+                <h:dataTable value="#{choise.books}" var="book">
+                    <h:column>
+                        <f:facet name="header">ID</f:facet>
+                            #{book.id}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Checkin</f:facet>
+                            #{book.checkInDate}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Checkout</f:facet>
+                            #{book.checkOutDate}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Room</f:facet>
+                            #{book.roomId}
+                    </h:column>
+
+                </h:dataTable>
+            </h:form>
+
+            <p></p>
+            <h1>Order Confirmation</h1>
+            <h3>Your order has been placed successfully!</h3>
+            <p>Your confirmation code is: #{choise.confirmationCode}</p>
+            <h:link outcome="index.xhtml" value="Back to Home"/>
+        
+    </h:body>
+</html>

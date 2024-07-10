@@ -1,0 +1,11 @@
+firstcup\touristikosugkrotima\ejb\exceptions\IllegalOrphanException.class
+firstcup\touristikosugkrotima\ejb\exceptions\NonexistentEntityException.class
+firstcup\touristikosugkrotima\entities\Book_.class
+firstcup\touristikosugkrotima\entities\Room.class
+firstcup\touristikosugkrotima\entities\Book.class
+firstcup\touristikosugkrotima\entities\Room_.class
+firstcup\touristikosugkrotima\web\Choise.class
+firstcup\touristikosugkrotima\ejb\exceptions\PreexistingEntityException.class
+firstcup\touristikosugkrotima\ejb\RoomManager.class
+firstcup\touristikosugkrotima\ejb\exceptions\RollbackFailureException.class
+firstcup\touristikosugkrotima\ejb\ManagerConfig.class
